@@ -1,0 +1,30 @@
+.post{
+    max-width: 1200px;
+    width: 100%;
+    margin: 3.5rem auto;
+
+    &__title{
+        grid-column: 1 / -1;
+    }
+
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr minmax(50ch, 70ch) 1fr;
+        gap: 2.5rem;
+
+        & > *{
+            margin-bottom: 10px;
+            grid-column: 2 / span 1;
+        }
+
+        blockquote, .code-container {
+            grid-column: 1 / span 3;
+        }
+    
+        blockquote{
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+    }
+}
