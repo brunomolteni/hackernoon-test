@@ -27,11 +27,11 @@ const Profile = ({ profile, showBio, showSocialLinks, className }) => {
         ></img>
       </a>
 
-      <h3>
+      <h3 className="profile__name">
         <a className="profile__handle" href={profileUrl}>
           @{profile.handle}
         </a>
-        <p className="profile__name">{profile.displayName}</p>
+        <small>{profile.displayName}</small>
       </h3>
 
       {showBio && <p className="profile__bio">{profile.bio} </p>}

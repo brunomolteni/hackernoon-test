@@ -1,27 +1,38 @@
 .profile{
     display: flex;
-    flex-direction: column;
-    max-width: 200px;
     font-size: 0.8em;
 
     &__avatar{
-        margin-left: .2em;
+        margin: .2em;
         box-shadow: rgb(194 202 214) 0px 0.2em, rgb(194 202 214) 0px -0.2em, rgb(194 202 214) 0.2em 0px, rgb(194 202 214) -0.2em 0px;
     }
 
     &__name{
-        font-weight: bold;
-        font-size: 0.8em;
-        margin: 0;
+        margin: 0 2rem;
+        small{
+            display: block;
+        }
     }
 
     &__social{
+        margin-left: 2rem;
         > a:not(:last-child){
             margin-right: 10px;
         }
     }
 
-    &__bio{
-        margin-top: 0;
+
+    @media screen and (max-width: 768px) {
+        &__bio{
+            margin-top: 0;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        flex-direction: column;
+
+        &__name, &__social{
+            margin: 0;
+        }
     }
 }
