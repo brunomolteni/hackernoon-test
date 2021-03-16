@@ -4,31 +4,15 @@ import "./Post.scss";
 import modifyGistEmbed from "../util/modifyGistEmbed";
 import Profile from "../common/Profile";
 import Reactions from "../common/Reactions";
+import PostInfoBar from "./subcomponents/InfoBar";
 
 const Post = ({ data }) => {
   const modifiedMarkup = modifyGistEmbed(data.markup);
-  const formattedDate = new Date(data.publishedAt * 1000).toLocaleDateString(
-    "en-us",
-    {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }
-  );
 
   return (
     <main className="post">
       <h1 className="post__title">{data.title} </h1>
-      <div className="post__info">
-        <p>
-          {formattedDate}.{" "}
-          <small>Estimated Time: {data.estimatedTime} Minutes</small>
-        </p>
-        <Reactions
-          reactions={data.reactions.storyReactions}
-          total={data.reactions.total}
-        />
-      </div>
+      <PostInfoBar {...data} />
       <img
         className="post__image"
         src={data.mainImage}
