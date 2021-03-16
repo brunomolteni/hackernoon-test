@@ -1,16 +1,18 @@
 .post{
-    max-width: 1200px;
-    width: 100%;
-    margin: 3.5rem auto;
+    grid-template-columns: 1fr minmax(50ch, 70ch) 1fr;
+    gap: 2.5rem;
 
-    &__title{
+    &__title, &__image{
+        grid-column: span 3;
+    }
 
+    &__profile{
+        grid-row: span 5;
+        margin-bottom: 20px;
     }
 
     &__content{
-        display: grid;
-        grid-template-columns: 1fr minmax(50ch, 70ch) 1fr;
-        gap: 2.5rem;
+        display: contents;
 
         & > *{
             margin-bottom: 10px;
@@ -20,11 +22,35 @@
         blockquote, .code-container {
             grid-column: 1 / span 3;
         }
+
+        .code-container{
+            font-size: .8em;
+        }
     
         blockquote{
             text-align: center;
             font-style: italic;
             font-size: 1.2em;
         }
+
+        pre{
+            display: inline;
+            font-size: .8em;
+            background-color: #eee;
+            padding: .2em;
+        }
+    }
+
+
+    @media screen and (max-width: 768px) {
+        &__content{
+            .paragraph, h2, h3, h4{
+                padding: 0 .5em;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        display: grid;
     }
 }
