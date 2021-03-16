@@ -1,0 +1,19 @@
+.reactions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+
+    & img{
+        filter: grayscale(1);
+        transform: scale(.8);
+        height: 36px;
+        width: auto;
+        margin-left: 1rem;
+    }
+
+    & &__highlight{
+        filter: grayscale(0);
+        transform: scale(1)
+    }
+}

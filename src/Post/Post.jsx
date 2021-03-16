@@ -3,6 +3,7 @@ import "./Post.scss";
 
 import modifyGistEmbed from "../util/modifyGistEmbed";
 import Profile from "../common/Profile";
+import Reactions from "../common/Reactions";
 
 const Post = ({ data }) => {
   const modifiedMarkup = modifyGistEmbed(data.markup);
@@ -25,6 +26,11 @@ const Post = ({ data }) => {
         className="post__content"
         dangerouslySetInnerHTML={{ __html: modifiedMarkup }}
       ></article>
+      <Reactions
+        className="post__reactions"
+        reactions={data.reactions.storyReactions}
+        total={data.reactions.total}
+      />
     </main>
   );
 };

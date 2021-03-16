@@ -2,7 +2,7 @@
     grid-template-columns: 1fr minmax(50ch, 70ch) 1fr;
     gap: 2.5rem;
 
-    &__title, &__image{
+    &__title, &__image, &__reactions{
         grid-column: span 3;
     }
 
@@ -39,6 +39,10 @@
             background-color: #eee;
             padding: .2em;
         }
+    }
+
+    &__reactions{
+        margin-bottom: 2rem;
     }
 
 
