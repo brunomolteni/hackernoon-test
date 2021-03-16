@@ -1,11 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles/index.css";
+import Post from "./Post";
+import postData from "./post-data.json";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Post data={postData} />
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
