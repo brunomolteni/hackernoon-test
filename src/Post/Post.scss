@@ -5,13 +5,15 @@
   &__title,
   &__image,
   &__info,
-  &__reactions {
+  &__reactions,
+  &__related {
     grid-column: span 3;
   }
 
   &__tags,
   &__author-ad {
     grid-column: 2 / span 1;
+    margin-bottom: calc(var(--spacing) * 2);
   }
 
   &__info {
@@ -29,13 +31,8 @@
     margin-bottom: calc(var(--spacing) * 2);
   }
 
-  &__reactions {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
-
   &__tags {
     text-align: center;
-    margin-bottom: calc(var(--spacing) * 2);
 
     &-title {
       font-size: var(--big-text);
@@ -56,6 +53,22 @@
 
     a:not(--unstyled):hover {
       color: white;
+    }
+  }
+
+  &__related {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: calc(var(--spacing) * 2);
+    margin-bottom: calc(var(--spacing) * 2);
+
+    &-title {
+      font-size: var(--big-text);
+      grid-column: span 3;
+      text-align: center;
+    }
+
+    .post-preview {
+      margin-bottom: calc(var(--spacing) * 2);
     }
   }
 
@@ -124,6 +137,10 @@
 
     &__info > * {
       flex-shrink: 0;
+    }
+
+    &__related {
+      display: grid;
     }
   }
 }

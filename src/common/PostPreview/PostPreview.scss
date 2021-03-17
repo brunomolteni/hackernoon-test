@@ -1,0 +1,36 @@
+.post-preview {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+
+  &__title {
+    font-size: var(--big-text);
+    transition: color 0.15s ease-out;
+
+    &:hover {
+      color: var(--brand-color);
+    }
+  }
+
+  &__image {
+    height: 200px;
+    background-color: #eee;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: var(--spacing);
+    height: 70px;
+
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -6,7 +6,7 @@ export default ({ tags }) => {
     <div className="post__tags">
       <h4 className="post__tags-title">Tags</h4>
       {tags.map((tag) => (
-        <Tag>{tag}</Tag>
+        <Tag key={tag}>{tag}</Tag>
       ))}
     </div>
   );

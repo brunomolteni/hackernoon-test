@@ -2,7 +2,7 @@ import React from "react";
 import "./Profile.scss";
 
 const SocialLink = ({ provider, user }) => (
-  <a href={`https://${provider}.com/${user}`}>
+  <a href={`https://${provider}.com/${user}`} className="--unstyled">
     <img
       src={`img/${provider}-new.png`}
       width="20"
@@ -12,13 +12,20 @@ const SocialLink = ({ provider, user }) => (
   </a>
 );
 
-const Profile = ({ profile, showBio, showSocialLinks, className }) => {
+const Profile = ({
+  profile,
+  showBio,
+  showSocialLinks,
+  className,
+  vertical = true,
+}) => {
   const profileUrl = `https://hackernoon.com/u/${profile.handle}`;
   return (
-    <div className={`profile ${className || ""}`}>
-      <a href={profileUrl} className="--unstyled">
+    <div
+      className={`profile ${className || ""} ${vertical ? "" : "--horizontal"}`}
+    >
+      <a href={profileUrl} className="profile__avatar --unstyled">
         <img
-          className="profile__avatar"
           src={profile.avatar}
           alt={`${profile.displayName}'s Profile Picture`}
           width="50"

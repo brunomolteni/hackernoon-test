@@ -1,10 +1,20 @@
 .profile {
   display: flex;
-  font-size: 0var (--small-text);
+  font-size: var(--small-text);
 
   &__avatar {
-    margin: 0.2em;
-    box-shadow: var(--pixel-border);
+    flex-shrink: 0;
+
+    img {
+      margin: 0.2em;
+      box-shadow: var(--pixel-border);
+    }
+
+    &:hover {
+      img {
+        box-shadow: var(--pixel-border-hover);
+      }
+    }
   }
 
   &__name {
@@ -28,7 +38,15 @@
   }
 
   @media screen and (min-width: 768px) {
-    flex-direction: column;
+    &:not(.--horizontal) {
+      flex-direction: column;
+    }
+
+    &.--horizontal {
+      .profile__avatar {
+        margin-right: var(--spacing);
+      }
+    }
 
     &__name,
     &__social {

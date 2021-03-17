@@ -53,6 +53,7 @@ a:not(.--unstyled):before{
 }
 a:not(.--unstyled):hover:before{
   top: 0;
+  opacity: 1;
 }
 
 code {
