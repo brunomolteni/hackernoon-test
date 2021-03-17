@@ -6,6 +6,7 @@ import Profile from "../common/Profile";
 import Reactions from "../common/Reactions";
 import PostInfoBar from "./subcomponents/PostInfoBar";
 import PostTags from "./subcomponents/PostTags";
+import PostAuthorAd from "./subcomponents/PostAuthorAd";
 
 const Post = ({ data }) => {
   const modifiedMarkup = modifyGistEmbed(data.markup);
@@ -34,6 +35,7 @@ const Post = ({ data }) => {
         reactions={data.reactions.storyReactions}
         total={data.reactions.total}
       />
+      <PostAuthorAd profile={data.profile} />
       <PostTags tags={data.tags} />
     </main>
   );

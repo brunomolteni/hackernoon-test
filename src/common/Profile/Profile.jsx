@@ -16,7 +16,7 @@ const Profile = ({ profile, showBio, showSocialLinks, className }) => {
   const profileUrl = `https://hackernoon.com/u/${profile.handle}`;
   return (
     <div className={`profile ${className || ""}`}>
-      <a href={profileUrl}>
+      <a href={profileUrl} className="--unstyled">
         <img
           className="profile__avatar"
           src={profile.avatar}
