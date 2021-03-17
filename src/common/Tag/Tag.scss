@@ -1,0 +1,14 @@
+.tag{
+    color: #333;
+    font-family: var(--monospace-font);
+    font-size: var(--small-text);
+    box-shadow: var(--pixel-border);
+    display: inline-block;
+    white-space: nowrap;
+    background-color: rgb(246, 247, 249);
+
+    &:hover{
+        background-color: rgb(0, 255, 0);
+        box-shadow: var(--pixel-border-hover);
+    }
+}

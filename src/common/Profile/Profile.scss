@@ -1,38 +1,38 @@
-.profile{
-    display: flex;
-    font-size: 0.8em;
+.profile {
+  display: flex;
+  font-size: 0var (--small-text);
 
-    &__avatar{
-        margin: .2em;
-        box-shadow: rgb(194 202 214) 0px 0.2em, rgb(194 202 214) 0px -0.2em, rgb(194 202 214) 0.2em 0px, rgb(194 202 214) -0.2em 0px;
+  &__avatar {
+    margin: 0.2em;
+    box-shadow: var(--pixel-border);
+  }
+
+  &__name {
+    margin: 0 calc(var(--spacing) * 2);
+    small {
+      display: block;
     }
+  }
 
-    &__name{
-        margin: 0 2rem;
-        small{
-            display: block;
-        }
+  &__social {
+    margin-left: calc(var(--spacing) * 2);
+    > a:not(:last-child) {
+      margin-right: var(--spacing);
     }
+  }
 
-    &__social{
-        margin-left: 2rem;
-        > a:not(:last-child){
-            margin-right: 1rem;
-        }
+  @media screen and (max-width: 768px) {
+    &__bio {
+      margin-top: 0;
     }
+  }
 
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
 
-    @media screen and (max-width: 768px) {
-        &__bio{
-            margin-top: 0;
-        }
+    &__name,
+    &__social {
+      margin: 0;
     }
-    
-    @media screen and (min-width: 768px) {
-        flex-direction: column;
-
-        &__name, &__social{
-            margin: 0;
-        }
-    }
+  }
 }

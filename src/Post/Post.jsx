@@ -4,7 +4,8 @@ import "./Post.scss";
 import modifyGistEmbed from "../util/modifyGistEmbed";
 import Profile from "../common/Profile";
 import Reactions from "../common/Reactions";
-import PostInfoBar from "./subcomponents/InfoBar";
+import PostInfoBar from "./subcomponents/PostInfoBar";
+import PostTags from "./subcomponents/PostTags";
 
 const Post = ({ data }) => {
   const modifiedMarkup = modifyGistEmbed(data.markup);
@@ -33,6 +34,7 @@ const Post = ({ data }) => {
         reactions={data.reactions.storyReactions}
         total={data.reactions.total}
       />
+      <PostTags tags={data.tags} />
     </main>
   );
 };
