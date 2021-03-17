@@ -21,5 +21,6 @@ const Reactions = ({ reactions, total, className }) => {
     </div>
   );
 };
+Reactions.displayName = "Reactions";
 
 export default Reactions;
